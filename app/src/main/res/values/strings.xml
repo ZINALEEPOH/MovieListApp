@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MovieListApp</string>
+    <string name="tv1">Movie Title</string>
+    <string name="tv2">Genre</string>
+    <string name="tv3">Year</string>
+    <string name="tv4">Rating</string>
+    <string name="tv5">Movie ID</string>
+    <string name="et1">Enter movie title here</string>
+    <string name="et2">Enter genre here</string>
+    <string name="et3">Enter year of release here</string>
+    <string name="btn1">INSERT</string>
+    <string name="btn2">SHOW LIST</string>
+    <string name="btn3">SHOW ALL PG-13 MOVIES</string>
+    <string name="btn4">UPDATE</string>
+    <string name="btn5">DELETE</string>
+    <string name="btn6">CANCEL</string>
+    <string-array name="spinnerItems">
+        <item>G</item>
+        <item>PG</item>
+        <item>PG13</item>
+        <item>NC16</item>
+        <item>M18</item>
+        <item>R21</item>
+    </string-array>
+</resources>
