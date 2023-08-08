@@ -1,7 +1,9 @@
 package com.example.movielistapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -89,18 +91,42 @@ public class ModifyMovie extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBHelper dbh = new DBHelper(ModifyMovie.this);
-                dbh.deleteMovie(data.getId());
-                finish();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ModifyMovie.this);
+                builder.setTitle("Danger");
+                builder.setMessage("Are you sure you want to delete the movie: " + data.getTitle() + "?");
+                builder.setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DBHelper dbh = new DBHelper(ModifyMovie.this);
+                        dbh.deleteMovie(data.getId());
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("CANCEL", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
+
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ModifyMovie.this);
+                builder.setTitle("Danger");
+                builder.setMessage("Are you sure you want to discard the changes?");
+                builder.setPositiveButton("DISCARD", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("DO NOT DISCARD", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
+
 
     }
 }
