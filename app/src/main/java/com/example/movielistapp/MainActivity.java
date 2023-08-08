@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etTitle, etGenre, etYear;
     Button btnInsert, btnShowList;
     Spinner spinner;
+    //yuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
